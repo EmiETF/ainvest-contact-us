@@ -79,6 +79,11 @@ const contactData = [
         available: 'Response within 48 hours',
       },
       {
+        type: 'AIME Chat',
+        value: 'Available on platform',
+        available: 'Mon-Fri, 9AM-5PM EST',
+      },
+      {
         type: 'Social Channels',
         value: 'Discord & Telegram',
         available: 'Response within 24 hours',
