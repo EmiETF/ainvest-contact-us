@@ -20,11 +20,6 @@ const contactData = [
         available: 'Response within 48 hours',
       },
       {
-        type: 'Phone',
-        value: '+1 (888) 123-4567',
-        available: '24/7',
-      },
-      {
         type: 'Email',
         value: 'support@ainvest.com',
         available: 'Response within 24 hours',
@@ -39,6 +34,11 @@ const contactData = [
         value: 'Discord & Telegram',
         available: 'Response within 12 hours',
         platforms: ['Discord', 'Telegram'],
+      },
+      {
+        type: 'Phone',
+        value: '+1 (888) 123-4567',
+        available: '24/7',
       },
     ],
   },
