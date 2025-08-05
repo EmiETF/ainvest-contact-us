@@ -146,7 +146,7 @@ const ContactCategory = ({ category }: ContactCategoryProps) => {
                     {channel.value}
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
-                    24/7
+                    {channel.available}
                   </p>
                 </div>
                 {channel.platforms && (

@@ -17,7 +17,7 @@ const contactData = [
       {
         type: 'Online Form',
         value: 'Submit a ticket',
-        available: 'Response within 48 hours',
+        available: 'Response within 24 hours',
       },
       {
         type: 'Email',
@@ -38,7 +38,7 @@ const contactData = [
       {
         type: 'Phone',
         value: '+1 (888) 123-4567',
-        available: '24/7',
+        available: 'Mon-Fri 8AM - 5PM ET',
       },
     ],
   },
