@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react'
 import ContactForm from './ContactForm'
+import { Button } from '../ui/button'
 import {
   PhoneIcon,
   MailIcon,
@@ -150,9 +150,25 @@ const ContactCategory = ({ category }: ContactCategoryProps) => {
                     <h3 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
                       {channel.type}
                     </h3>
-                    <p className="text-sm text-primary font-medium mt-1">
-                      {channel.value}
-                    </p>
+                    {channel.value === 'User Signin Button' ? (
+                      <div className="mt-1">
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="text-primary border-primary hover:bg-primary hover:text-primary-foreground"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            window.open('https://r.ainvest.com/?code=K7MQ9XN2', '_blank')
+                          }}
+                        >
+                          Sign In for Support
+                        </Button>
+                      </div>
+                    ) : (
+                      <p className="text-sm text-primary font-medium mt-1">
+                        {channel.value}
+                      </p>
+                    )}
                     <p className="text-xs text-muted-foreground mt-1">
                       {channel.available}
                     </p>
