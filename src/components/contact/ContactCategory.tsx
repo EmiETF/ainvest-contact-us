@@ -87,14 +87,12 @@ const TelegramIcon = () => (
 )
 
 const ContactCategory = ({ category }: ContactCategoryProps) => {
-  const [showForm, setShowForm] = useState(false)
-  const [activeChannel, setActiveChannel] = useState<string | null>(null)
+  const [activeFormChannel, setActiveFormChannel] = useState<number | null>(null)
   const [isExpanded, setIsExpanded] = useState(false)
 
-  const handleChannelClick = (channel: Channel) => {
+  const handleChannelClick = (channel: Channel, index: number) => {
     if (channel.type === 'Online Form') {
-      setShowForm(true)
-      setActiveChannel(category.title)
+      setActiveFormChannel(activeFormChannel === index ? null : index)
     } else if (channel.type === 'Phone' && channel.value === 'User Signin Button') {
       window.open('https://r.ainvest.com/?code=K7MQ9XN2', '_blank')
     }
@@ -131,44 +129,45 @@ const ContactCategory = ({ category }: ContactCategoryProps) => {
       {isExpanded && (
         <div className="px-8 pb-8 pt-0 space-y-3 animate-fade-in">
           {category.channels.map((channel, idx) => (
-            <div
-              key={idx}
-              className="contact-channel cursor-pointer group"
-              onClick={() => handleChannelClick(channel)}
-            >
-              <div className="flex items-start">
-                <div className="flex-shrink-0 mt-1 mr-4">
-                  {getChannelIcon(channel.type)}
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                    {channel.type}
-                  </h3>
-                  <p className="text-sm text-primary font-medium mt-1">
-                    {channel.value}
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    {channel.available}
-                  </p>
-                </div>
-                {channel.platforms && (
-                  <div className="flex space-x-3 ml-4">
-                    {channel.platforms.includes('Discord') && <DiscordIcon />}
-                    {channel.platforms.includes('Telegram') && <TelegramIcon />}
+            <React.Fragment key={idx}>
+              <div
+                className="contact-channel cursor-pointer group"
+                onClick={() => handleChannelClick(channel, idx)}
+              >
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-1 mr-4">
+                    {getChannelIcon(channel.type)}
                   </div>
-                )}
+                  <div className="flex-grow">
+                    <h3 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                      {channel.type}
+                    </h3>
+                    <p className="text-sm text-primary font-medium mt-1">
+                      {channel.value}
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {channel.available}
+                    </p>
+                  </div>
+                  {channel.platforms && (
+                    <div className="flex space-x-3 ml-4">
+                      {channel.platforms.includes('Discord') && <DiscordIcon />}
+                      {channel.platforms.includes('Telegram') && <TelegramIcon />}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
+              
+              {activeFormChannel === idx && channel.type === 'Online Form' && (
+                <div className="ml-9 mt-3 p-6 border border-border bg-muted/30 rounded-lg animate-scale-in">
+                  <ContactForm
+                    category={category.title}
+                    onClose={() => setActiveFormChannel(null)}
+                  />
+                </div>
+              )}
+            </React.Fragment>
           ))}
-        </div>
-      )}
-      
-      {showForm && activeChannel === category.title && (
-        <div className="p-8 border-t border-border bg-muted/30 animate-scale-in">
-          <ContactForm
-            category={category.title}
-            onClose={() => setShowForm(false)}
-          />
         </div>
       )}
     </div>
