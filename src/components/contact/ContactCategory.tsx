@@ -95,8 +95,6 @@ const ContactCategory = ({ category }: ContactCategoryProps) => {
     if (channel.type === 'Online Form') {
       setShowForm(true)
       setActiveChannel(category.title)
-    } else if (channel.type === 'Phone' && channel.value === 'User Signin Button') {
-      window.open('https://r.ainvest.com/?code=K7MQ9XN2', '_blank')
     }
   }
 

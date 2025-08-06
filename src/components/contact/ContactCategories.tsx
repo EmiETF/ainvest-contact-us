@@ -37,8 +37,8 @@ const contactData = [
       },
       {
         type: 'Phone',
-        value: 'User Signin Button',
-        available: 'Support Number is available on profile page',
+        value: '+1 (888) 123-4567',
+        available: 'Mon-Fri 8AM - 5PM ET',
       },
     ],
   },
