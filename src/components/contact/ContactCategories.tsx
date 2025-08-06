@@ -27,12 +27,12 @@ const contactData = [
       {
         type: 'AIME Chat',
         value: 'Available on platform',
-        available: 'Mon-Fri, 9AM-5PM EST',
+        available: '24/7',
       },
       {
         type: 'Social Channels',
         value: 'Discord & Telegram',
-        available: 'Response within 12 hours',
+        available: 'Sun - Fri 9 AM - 5 PM ET',
         platforms: ['Discord', 'Telegram'],
       },
       {
@@ -52,12 +52,12 @@ const contactData = [
       {
         type: 'Online Form',
         value: 'Submit content request',
-        available: 'Response within 72 hours',
+        available: 'Response within 24 hours',
       },
       {
         type: 'Email',
         value: 'content@ainvest.com',
-        available: 'Response within 48 hours',
+        available: 'Response within 24 hours',
       },
     ],
   },
@@ -71,22 +71,22 @@ const contactData = [
       {
         type: 'Online Form',
         value: 'Submit marketing inquiry',
-        available: 'Response within 72 hours',
+        available: 'Response within 24 hours',
       },
       {
         type: 'Email',
         value: 'marketing@ainvest.com',
-        available: 'Response within 48 hours',
+        available: 'Response within 24 hours',
       },
       {
         type: 'AIME Chat',
         value: 'Available on platform',
-        available: 'Mon-Fri, 9AM-5PM EST',
+        available: '24/7',
       },
       {
         type: 'Social Channels',
         value: 'Discord & Telegram',
-        available: 'Response within 24 hours',
+        available: 'Sun - Fri 9 AM - 5 PM ET',
         platforms: ['Discord', 'Telegram'],
       },
     ],
@@ -101,17 +101,17 @@ const contactData = [
       {
         type: 'Online Form',
         value: 'Submit partnership proposal',
-        available: 'Response within 5 business days',
+        available: 'Response within 24 hours',
       },
       {
         type: 'Email',
         value: 'partnerships@ainvest.com',
-        available: 'Response within 48 hours',
+        available: 'Response within 24 hours',
       },
       {
         type: 'Social Channels',
         value: 'Discord & Telegram',
-        available: 'Response within 24 hours',
+        available: 'Sun - Fri 9 AM - 5 PM ET',
         platforms: ['Discord', 'Telegram'],
       },
     ],
