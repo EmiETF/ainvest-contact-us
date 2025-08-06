@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import ContactForm from './ContactForm'
 import {
@@ -92,7 +93,12 @@ const ContactCategory = ({ category }: ContactCategoryProps) => {
 
   const handleChannelClick = (channel: Channel, index: number) => {
     if (channel.type === 'Online Form') {
-      setActiveFormChannel(activeFormChannel === index ? null : index)
+      // Special handling for Content Inquiry category
+      if (category.title === 'Content Inquiry') {
+        window.open('https://qqou6pfdhxa.typeform.com/to/V5GRCO3T', '_blank')
+      } else {
+        setActiveFormChannel(activeFormChannel === index ? null : index)
+      }
     } else if (channel.type === 'Phone' && channel.value === 'User Signin Button') {
       window.open('https://r.ainvest.com/?code=K7MQ9XN2', '_blank')
     } else if (channel.type === 'AIME Chat') {
@@ -160,7 +166,7 @@ const ContactCategory = ({ category }: ContactCategoryProps) => {
                 </div>
               </div>
               
-              {activeFormChannel === idx && channel.type === 'Online Form' && (
+              {activeFormChannel === idx && channel.type === 'Online Form' && category.title !== 'Content Inquiry' && (
                 <div className="ml-9 mt-3 p-6 border border-border bg-muted/30 rounded-lg animate-scale-in">
                   <ContactForm
                     category={category.title}
