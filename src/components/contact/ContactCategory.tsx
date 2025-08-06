@@ -47,15 +47,16 @@ const getChannelIcon = (type: string) => {
 }
 
 // Discord icon component
-const DiscordIcon = () => (
+const DiscordIcon = ({ onClick }: { onClick?: () => void }) => (
   <svg
-    className="h-5 w-5 icon-primary"
+    className="h-5 w-5 icon-primary cursor-pointer hover:opacity-80 transition-opacity"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    onClick={onClick}
   >
     <circle cx="9" cy="12" r="1"></circle>
     <circle cx="15" cy="12" r="1"></circle>
@@ -67,15 +68,16 @@ const DiscordIcon = () => (
 )
 
 // Telegram icon component
-const TelegramIcon = () => (
+const TelegramIcon = ({ onClick }: { onClick?: () => void }) => (
   <svg
-    className="h-5 w-5 icon-primary"
+    className="h-5 w-5 icon-primary cursor-pointer hover:opacity-80 transition-opacity"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    onClick={onClick}
   >
     <path d="M21.73 2.27a2 2 0 0 0-2.83 0L4.06 17.1a2 2 0 0 0 0 2.83 2 2 0 0 0 2.83 0L21.73 5.1a2 2 0 0 0 0-2.83z"></path>
     <path d="m4.1 17.1 15.8-15.8"></path>
@@ -104,6 +106,14 @@ const ContactCategory = ({ category }: ContactCategoryProps) => {
     } else if (channel.type === 'AIME Chat') {
       window.open('https://www.ainvest.com/chat/', '_blank')
     }
+  }
+
+  const handleDiscordClick = () => {
+    window.open('https://discord.com/invite/44AMr7JMtD', '_blank')
+  }
+
+  const handleTelegramClick = () => {
+    window.open('https://web.telegram.org/k/#-1798742957', '_blank')
   }
 
   const toggleExpand = () => {
@@ -174,9 +184,25 @@ const ContactCategory = ({ category }: ContactCategoryProps) => {
                     </p>
                   </div>
                   {channel.platforms && (
-                    <div className="flex space-x-3 ml-4">
-                      {channel.platforms.includes('Discord') && <DiscordIcon />}
-                      {channel.platforms.includes('Telegram') && <TelegramIcon />}
+                    <div className="flex flex-col space-y-2 ml-4">
+                      {channel.platforms.includes('Discord') && (
+                        <div className="flex items-center space-x-2 cursor-pointer" onClick={(e) => {
+                          e.stopPropagation()
+                          handleDiscordClick()
+                        }}>
+                          <DiscordIcon />
+                          <span className="text-sm text-primary font-medium hover:opacity-80 transition-opacity">Discord</span>
+                        </div>
+                      )}
+                      {channel.platforms.includes('Telegram') && (
+                        <div className="flex items-center space-x-2 cursor-pointer" onClick={(e) => {
+                          e.stopPropagation()
+                          handleTelegramClick()
+                        }}>
+                          <TelegramIcon />
+                          <span className="text-sm text-primary font-medium hover:opacity-80 transition-opacity">Telegram</span>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
