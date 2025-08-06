@@ -95,6 +95,8 @@ const ContactCategory = ({ category }: ContactCategoryProps) => {
       setActiveFormChannel(activeFormChannel === index ? null : index)
     } else if (channel.type === 'Phone' && channel.value === 'User Signin Button') {
       window.open('https://r.ainvest.com/?code=K7MQ9XN2', '_blank')
+    } else if (channel.type === 'AIME Chat') {
+      window.open('https://www.ainvest.com/chat/', '_blank')
     }
   }
 
