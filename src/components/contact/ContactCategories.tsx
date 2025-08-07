@@ -93,12 +93,6 @@ const contactData = [
         value: 'partnerships@ainvest.com',
         available: 'Response within 24 hours',
       },
-      {
-        type: 'Social Channels',
-        value: 'Discord & Telegram',
-        available: 'Sun - Fri 9 AM - 5 PM ET',
-        platforms: ['Discord', 'Telegram'],
-      },
     ],
   },
 ]
