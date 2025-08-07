@@ -64,11 +64,6 @@ const contactData = [
     icon: <BarChart2Icon className="h-8 w-8 icon-primary" />,
     channels: [
       {
-        type: 'Online Form',
-        value: 'Submit marketing inquiry',
-        available: 'Response within 24 hours',
-      },
-      {
         type: 'Email',
         value: 'marketing@ainvest.com',
         available: 'Response within 24 hours',
