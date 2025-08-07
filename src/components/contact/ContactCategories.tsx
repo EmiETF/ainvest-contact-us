@@ -65,7 +65,7 @@ const contactData = [
     channels: [
       {
         type: 'Email',
-        value: 'marketing@ainvest.com',
+        value: 'ads@ainvest.com',
         available: 'Response within 24 hours',
       },
       {
