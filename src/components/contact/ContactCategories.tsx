@@ -15,11 +15,6 @@ const contactData = [
     icon: <HeadphonesIcon className="h-8 w-8 icon-primary" />,
     channels: [
       {
-        type: 'Online Form',
-        value: 'Submit a ticket',
-        available: 'Response within 24 hours',
-      },
-      {
         type: 'Email',
         value: 'support@ainvest.com',
         available: 'Response within 24 hours',
