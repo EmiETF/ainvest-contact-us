@@ -89,11 +89,6 @@ const contactData = [
     icon: <HandshakeIcon className="h-8 w-8 icon-primary" />,
     channels: [
       {
-        type: 'Online Form',
-        value: 'Submit partnership proposal',
-        available: 'Response within 24 hours',
-      },
-      {
         type: 'Email',
         value: 'partnerships@ainvest.com',
         available: 'Response within 24 hours',
