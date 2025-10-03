@@ -97,7 +97,7 @@ const ContactCategory = ({ category }: ContactCategoryProps) => {
     if (channel.type === 'Online Form') {
       // Special handling for Content Inquiry category
       if (category.title === 'Content Inquiry') {
-        window.open('https://qqou6pfdhxa.typeform.com/to/V5GRCO3T', '_blank')
+        window.open('https://form.typeform.com/to/V5GRCO3T', '_blank')
       } else {
         setActiveFormChannel(activeFormChannel === index ? null : index)
       }
